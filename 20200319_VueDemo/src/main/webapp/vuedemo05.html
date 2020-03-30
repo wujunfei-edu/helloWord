@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件修饰(阻止表单默认提交)</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{message}}
+        <!-- 阻止表单的提交 -->
+        <!--<form action="https://www.baidu.com" method="post" onsubmit="return aa()">
+            <input type="submit" value="提交 ">
+        </form>-->
+        <form action="https://www.baidu.com" method="post" v-on:submit.prevent>
+            <input type="submit" value="提交 ">
+        </form>
+
+        <!-- 绑定指定的键盘按键 -->
+        <input type="text" @keydown.enter="funEnter" value="绑定Enter键"><br>
+        <input type="text" @keydown.up="funUp" value="绑定向上键">
+
+    </div>
+
+    <script>
+
+        /*function aa() {
+            return false;
+        }*/
+
+        //创建Vue对象
+        new Vue({
+            el:"#app",
+            data:{
+                message:"Hello word",
+            },
+            methods:{
+
+                funEnter:function () {
+                    alert("按下的是回车键");
+                },
+
+                funUp:function () {
+                    alert("按下的是向上键");
+                }
+
+            }
+        });
+    </script>
+
+</body>
+</html>

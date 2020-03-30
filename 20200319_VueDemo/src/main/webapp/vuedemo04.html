@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定(鼠标移动事件)v-on:mousemove</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{message}}
+        <!-- 获取键盘输入 -->
+        <div style="width: 200px;height: 200px;background: red" type="text" v-on:mousemove="funmousemove()"></div>
+    </div>
+
+    <script>
+
+        //创建Vue对象
+        new Vue({
+            el:"#app",
+            data:{
+                message:"Hello word",
+            },
+            methods:{
+
+                funmousemove:function () {
+                    alert("鼠标移动");
+                }
+
+            }
+        });
+    </script>
+
+</body>
+</html>

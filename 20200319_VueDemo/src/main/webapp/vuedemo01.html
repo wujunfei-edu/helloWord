@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>入门程序</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        {{age+1}}
+    </div>
+
+    <script>
+        /*document.getElementById("app").innerHTML="hello Vue.js";*/
+        //创建Vue对象
+        new Vue({
+            el:"#app",      //将id为app的元素区域交由Vue进行管理（渲染）
+            data:{
+                message:"Hello word",
+                username:"宫本",
+                age:20
+            }
+        });
+    </script>
+
+</body>
+</html>

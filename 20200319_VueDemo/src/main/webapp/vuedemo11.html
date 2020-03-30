@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+    <script src="js/axios-0.18.0.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{message}}<br>
+
+    </div>
+
+    <script>
+        //创建Vue对象
+        new Vue({
+            el:"#app",
+            data:{
+                message:"<h1>Hello word</h1>",
+
+                userList:[
+                    {id:1, username:"宫本", password:"qwer"},
+                    {id:2, username:"赵云", password:"asdf"}
+                ]
+
+            },
+            methods:{
+                findAll:function () {
+                    //利用ajax一步向后台发送数据
+                    axios.get("url地址")
+                    .then(function (response) {     //执行成功之后的回调函数
+                        alert(response);
+                    })
+                    .catch(function (error) {       //执行失败
+                        alert(error);
+                    })
+                }
+            },
+            created:function () {
+                this.findAll();
+            }
+
+
+        });
+    </script>
+
+</body>
+</html>

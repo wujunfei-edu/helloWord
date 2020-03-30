@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定v-text,v-html</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{message}}
+        <div v-text="message"></div>
+        <div v-html="message"></div>
+
+
+    </div>
+
+    <script>
+
+        /*function aa() {
+            return false;
+        }*/
+
+        //创建Vue对象
+        new Vue({
+            el:"#app",
+            data:{
+                message:"<h1>Hello word</h1>",
+            },
+            methods:{
+
+
+
+            }
+        });
+    </script>
+
+</body>
+</html>

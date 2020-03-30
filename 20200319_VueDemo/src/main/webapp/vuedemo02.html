@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定（单击事件）v-on:click</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{message}}
+        <input type="button" v-on:click="funclick()" value="v-on">
+        <button v-on:click="funclick()">button按钮 v-on:click</button>
+        <button @click="funclickParam('你好 Vue.js')">button按钮 @click</button>
+    </div>
+
+    <script>
+
+        //创建Vue对象
+        new Vue({
+            el:"#app",
+            data:{
+                message:"Hello word",
+                username:"宫本",
+                age:20
+            },
+            methods:{
+                funclick(){
+                    alert("按钮点击");
+                },
+                funclickParam(str){
+                    this.message = str;
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

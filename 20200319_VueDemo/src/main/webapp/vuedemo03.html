@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定(键盘按下事件)v-on:keydown</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{message}}
+        <!-- 获取键盘输入 -->
+        <input type="text" v-on:keydown="funkeydown($event)">
+    </div>
+
+    <script>
+
+        //创建Vue对象
+        new Vue({
+            el:"#app",
+            data:{
+                message:"Hello word",
+            },
+            methods:{
+
+                funkeydown:function (event) {
+                    var keyCode = event.keyCode;
+                    /*alert(keyCode);*/
+                    if (keyCode<48 || keyCode>57){
+                        /*键盘0~9之外的输入不生效*/
+                        event.preventDefault();//按键不起作用
+                    }
+                }
+
+            }
+        });
+    </script>
+
+</body>
+</html>

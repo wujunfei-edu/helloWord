@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定v-for(获取数据库传过来的对象（数组或者集合），获取到默认text中)</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{message}}<br>
+
+        <table border="1" cellspacing="0" cellpadding="0" width="100px">
+            <tr>
+                <td>用户名</td>
+            </tr>
+            <!-- 对tr进行循环 -->
+            <tr v-for="str in strs">
+                <td>{{str}}</td>
+            </tr>
+        </table>
+
+
+        <table border="1" cellspacing="0" cellpadding="0" width="100px">
+            <tr>
+                <td>编号</td>
+                <td>用户名</td>
+            </tr>
+            <!-- 对tr进行循环 -->
+            <tr v-for="(str,index) in strs">
+                <td>{{index+1}}</td>    <!-- 编号从0开始 -->
+                <td>{{str}}</td>
+            </tr>
+        </table>
+
+
+        <table border="1" cellspacing="0" cellpadding="0" width="200px">
+            <tr>
+                <td>编号</td>
+                <td>用户名</td>
+            </tr>
+            <!-- 对tr进行循环 -->
+            <tr v-for="(key,value) in user">
+                <td>{{value}}----{{key}}</td>
+            </tr>
+        </table>
+
+        <table border="1" cellspacing="0" cellpadding="0" width="200px">
+            <tr>
+                <td>编号</td>
+                <td>用户名</td>
+                <td>密码</td>
+            </tr>
+            <!-- 对tr进行循环 -->
+            <tr v-for="(user,index) in userList">
+                <td>{{index}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <script>
+        //创建Vue对象
+        new Vue({
+            el:"#app",
+            data:{
+                message:"<h1>Hello word</h1>",
+
+                strs:["宫本","赵云","貂蝉","吕布"],
+
+                user:{
+                    id:1,
+                    username:"宫本",
+                    password:"qwer"
+                },
+
+                userList:[
+                    {id:1, username:"宫本", password:"qwer"},
+                    {id:2, username:"赵云", password:"asdf"}
+                ]
+
+
+            },
+            methods:{
+
+            }
+        });
+    </script>
+
+</body>
+</html>

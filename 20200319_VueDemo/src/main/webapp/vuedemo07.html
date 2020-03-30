@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定v-bind</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{message}}
+
+        <font v-bind:color="str">Vue数据绑定学习</font>
+        <font :color="str">Vue数据绑定学习</font>
+
+    </div>
+
+    <script>
+        //创建Vue对象
+        new Vue({
+            el:"#app",
+            data:{
+                message:"<h1>Hello word</h1>",
+                str:"red"
+            },
+            methods:{
+
+            }
+        });
+    </script>
+
+</body>
+</html>

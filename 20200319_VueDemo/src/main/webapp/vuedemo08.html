@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定v-model(获取数据库传过来的对象，获取到默认text中)</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{message}}<br>
+        <input type="text" v-model="user.username"><br>
+        <input type="text" v-model="user.age">
+
+    </div>
+
+    <script>
+        //创建Vue对象
+        new Vue({
+            el:"#app",
+            data:{
+                message:"<h1>Hello word</h1>",
+                //假设从数据库传过来user对象
+                user:{
+                    username:"宫本",
+                    age:20
+                }
+            },
+            methods:{
+
+            }
+        });
+    </script>
+
+</body>
+</html>
